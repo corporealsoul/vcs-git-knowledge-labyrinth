@@ -109,7 +109,24 @@ Restart!
 
 `git commit -m "Committing restart.txt"`
 
+`git reset`
+
 `git reset --soft HEAD~1`
+
+`git reset --hard HEAD~3`
+
+`git restore --staged .\20-apply-use-control\restart\restart.txt`
+
+`git log`
+
+`git checkout f694205c921715ffd7ebe5c291adda14f0098b90`
+
+`git branch`
+
+`git checkout main `  
+
+
+
 
 
 
@@ -131,11 +148,11 @@ Restart Again
 
 **02 Add this change**
 
-git add restart.txt
+`git add restart.txt`
 
-**03 Second change: Add the HTML headers**
+**03 Second change: Add the headers**
 
-nano restart.txt
+`nano restart.txt`
 
 ```
 More Changes
@@ -144,31 +161,31 @@ More Changes
 
 **04 Check the current status**
 
-git diff
+`git diff`
 
-git status
+`git status`
 
 **05 Commit**
 
-git commit -m "Added standard HTML page tags"
+`git commit -m "Added standard HTML page tags"`
 
-git status
+`git status`
 
 **06 Adding the second change**
 
-git add .
+`git add .`
 
-git status
+`git status`
 
 **07 Commit the second change**
 
-git commit -m "Added header"
+`git commit -m "Added header"`
 
 
 
-### 10. History —
+### 10. History
 
-git log
+`git log`
 
 **01 One line history**
 
@@ -858,6 +875,3 @@ anup@megatron:~/cloned_hello$ cat README
 
 **01 Run git server**
 
-.
-
-**@ By — Anup Kumar Mondal**
