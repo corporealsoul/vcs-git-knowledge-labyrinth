@@ -131,11 +131,11 @@ Restart Again
 
 **02 Add this change**
 
-PS D:\GITRepos> git add restart.txt
+git add restart.txt
 
 **03 Second change: Add the HTML headers**
 
-PS D:\GITRepos> nano restart.txt
+nano restart.txt
 
 ```
 More Changes
@@ -144,27 +144,31 @@ More Changes
 
 **04 Check the current status**
 
-PS D:\GITRepos> git status
+git diff
+
+git status
 
 **05 Commit**
 
-PS D:\GITRepos> git commit -m "Added standard HTML page tags"
+git commit -m "Added standard HTML page tags"
 
-PS D:\GITRepos> git status
+git status
 
 **06 Adding the second change**
 
-PS D:\GITRepos> git add .
+git add .
 
-PS D:\GITRepos> git status
+git status
 
 **07 Commit the second change**
 
-PS D:\GITRepos> git commit -m "Added HTML header"
+git commit -m "Added header"
+
+
 
 ### 10. History —
 
-PS D:\GITRepos> git log
+git log
 
 **01 One line history**
 
