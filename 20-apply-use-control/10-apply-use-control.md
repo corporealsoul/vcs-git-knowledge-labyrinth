@@ -1,98 +1,98 @@
 ### 1. Getting Started
 
-`git config --global user.name "[Your Name]"`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git config --global user.name "[Your Name]"`
 
-`git config --global user.email "[Your Email]"`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git config --global user.email "[Your Email]"`
 
-`git config --global color.ui auto`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git config --global color.ui auto`
 
-`git init [project_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git init [project_name]`
 
 
 ### 2. Tracking Changes
 
-`git add [file_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git add [file_name]`
 
-`git add .`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git add .`
 
-`git add -- :!*.txt`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git add -- :!*.txt`
 
-`git reset HEAD [file_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git reset HEAD [file_name]`
 
-`git status`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git status`
 
-`git diff`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git diff`
 
-`git diff --staged`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git diff --staged`
 
-`git commit -m "[Commit Message]"`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git commit -m "[Commit Message]"`
 
 
 ### 3. Branching and Merging
 
-`git branch`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git branch`
 
-`git branch -a`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git branch -a`
 
-`git branch [branch_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git branch [branch_name]`
 
-`git checkout [branch_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git checkout [branch_name]`
 
-`git merge [branch_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git merge [branch_name]`
 
-`git difftool --dirstats --stat index [branch_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git difftool --dirstats --stat index [branch_name]`
 
-`git rebase`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git rebase`
  
 
 ### 4. Remote Repositories
 
-`git clone https://docs.github.com/articles/cloning-a-repository`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git clone https://docs.github.com/articles/cloning-a-repository`
 
-`git remote add origin https://docs.github.com/articles/cloning-a-repository`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git remote add origin https://docs.github.com/articles/cloning-a-repository`
 
-`git push origin [branch_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git push origin [branch_name]`
 
-`git fetch origin`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git fetch origin`
 
-`git merge origin/[branch_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git merge origin/[branch_name]`
 
 
 ### 5. Undoing Changes
 
-`git reset HEAD [file_name]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git reset HEAD [file_name]`
 
-`git reset HEAD --hard`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git reset HEAD --hard`
 
-`git commit --amend`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git commit --amend`
 
 
 ### 6. Advanced Git Commands
 
-`.gitignore` 
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> .gitignore` 
 
-`git stash`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git stash`
 
-`git stash pop`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git stash pop`
 
-`git tag [tag_name] [commit_hash]`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git tag [tag_name] [commit_hash]`
 
-`git tag`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git tag`
 
 
 ### 7. Git Snapshots
 
-`git log`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git log`
 
-`git tag`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git tag`
 
-`git stash`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git stash`
 
 
 ### 8. Managing History in Git
 
-`git reset`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git reset`
 
-`git revert`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git revert`
 
-`git bisect`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth\20-apply-use-control> git bisect`
