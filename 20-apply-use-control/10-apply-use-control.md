@@ -1,877 +1,97 @@
-
-### 1. Installation
-
-**01 Installation**
-
-`git --version`
-
-
-
-### 2. Preparation
-
-**01 Setting up name and e-mail address**
-
-`git config --global [user.name](http://user.name) "corporealsoul"`
-
-`git config --global user.email "[bca.anup@gmail.com](mailto:bca.anup@gmail.com)"`
-
-`git config --global color.ui auto`
-
-`git config --global core.autocrlf input`
-
-`git config --global core.safecrlf warn`
-
-`git config --list`
-
-
-
-### 3. Creating a Project
-
-**01 Create a “restart!” page**
-
-`mkdir restart`
-
-`cd restart/`
-
-`touch restart.txt`
-
-`nano restart.txt`
-
-```
-restart!
-
-```
-
-**02 Create a repository**
-
-`git init`
-
-**03 Add the page to the repository**
-
-`git add restart.txt`
-
-`git commit -m "first commit with my restart page"`
-
-
-
-### 4. Checking the status of the repository
-
-**01 Check the status of the repository**
-
-`git status`
-
-`git diff`
-
-
-
-### 5. Making changes
-
-**01 Changing the “restart” page**
-
-`nano restart.txt`
-
-```
-Restart!
-
-```
-
-`git status`
-
-`git diff`
-
-
-
-### 6. Staging the changes
-
-`git add restart.txt`
-
-`git status`
-
-**git reset command to unstaged these changes**
-
-`git reset`
-
-`git restore --staged .\20-apply-use-control\restart\restart.txt`
-
-`git status`
-
-`git diff`
-
-
-
-### 7. Staging and committing
-
-`touch restart - Copy.txt restart - Copy (2).txt restart - Copy (3).txt`
-
-`git add restart.txt`
-
-`git status`
-
-`git commit -m "Committing restart.txt"`
-
-`git reset`
-
-`git reset --soft HEAD~1`
-
-`git reset --hard HEAD~3`
-
-`git restore --staged .\20-apply-use-control\restart\restart.txt`
-
-`git log`
-
-`git checkout f694205c921715ffd7ebe5c291adda14f0098b90`
-
-`git branch`
-
-`git checkout main `  
-
-
-
-
-
-
-### 8. Committing the changes
-
-`git commit -m "Committing restart.txt"`
-
-
-
-### 9. Changes, not files
-
-**01 First Change: Adding default page tags**
-
-`nano restart.txt`
-
-```
-Restart Again
-```
-
-**02 Add this change**
-
-`git add restart.txt`
-
-**03 Second change: Add the headers**
-
-`nano restart.txt`
-
-```
-More Changes
-
-```
-
-**04 Check the current status**
-
-`git diff`
-
-`git status`
-
-**05 Commit**
-
-`git commit -m "Added standard HTML page tags"`
-
-`git status`
-
-**06 Adding the second change**
-
-`git add .`
-
-`git status`
-
-**07 Commit the second change**
-
-`git commit -m "Added header"`
-
-
-
-### 10. History
-
-`git log`
-
-**01 One line history**
-
-PS D:\GITRepos> git log --pretty=oneline
-
-**04 The ultimate format of the log**
-
-PS D:\GITRepos> git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
-
-### 11. Aliases —
-
-**01 Define the hist alias in the .gitconfig file**
-
-PS D:\GITRepos> nano /home/anup/.gitconfig
-
-```
-[alias]
-
-hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-
-```
-
-PS D:\GITRepos> git hist
-
-### 12. Getting older versions —
-
-**01 Getting hashes for the previous versions**
-
-PS D:\GITRepos> git hist
-
-PS D:\GITRepos> git checkout eb748d1
-
-PS D:\GITRepos> cat hello.html
-
-**02 Returning to the latest version in the master branch**
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> cat hello.html
-
-### 13. Tagging versions —
-
-**01 Creating a tag for the first version**
-
-PS D:\GITRepos> git tag v1
-
-**02 Tags for previous versions**
-
-PS D:\GITRepos> cat hello.html
-
-PS D:\GITRepos> git checkout v1^
-
-PS D:\GITRepos> cat hello.html
-
-PS D:\GITRepos> git tag v1-beta
-
-**03 Check out by the tag name**
-
-PS D:\GITRepos> git checkout v1
-
-PS D:\GITRepos> git checkout v1-beta
-
-**04 Viewing tags with the tag command**
-
-PS D:\GITRepos> git tag
-
-**05 Viewing tags in logs**
-
-PS D:\GITRepos> git hist master --all
-
-### 14. Discarding local changes (before staging) —
-
-**01 Checking out the Master branch**
-
-PS D:\GITRepos> git checkout master
-
-**02 Change hello.html**
-
-PS D:\GITRepos> nano hello.html
-
-```
-<html>
-  <head>
-  </head>
-  <body>
-	<h1>Hello, World!</h1>
-	<!-- This is a bad comment.  We want to revert it. -->
-  </body>
-</html>
-
-```
-
-**03 Check the status**
-
-PS D:\GITRepos> git status
-
-**04 Undoing the changes in the working directory**
-
-PS D:\GITRepos> git checkout hello.html
-
-PS D:\GITRepos> git status
-
-PS D:\GITRepos> cat hello.html
-
-### 15. Cancel Staged changes (before committing) —
-
-**01 Edit file and stage changes**
-
-PS D:\GITRepos> nano hello.html
-
-```
-<html>
-  <head>
-	<!-- This is an unwanted but staged comment -->
-  </head>
-  <body>
-	<h1>Hello, World!</h1>
-  </body>
-</html>
-
-```
-
-PS D:\GITRepos> git add hello.html
-
-**02 Check the status**
-
-PS D:\GITRepos> git status
-
-**03 Reset the buffer zone**
-
-PS D:\GITRepos> git reset HEAD hello.html
-
-PS D:\GITRepos> git status
-
-**04 Switch to commit version**
-
-PS D:\GITRepos> git checkout hello.html
-
-PS D:\GITRepos> git status
-
-### 16. Cancelling commits and Removing a commit from a branch —
-
-**01 Cancelling commits**
-
-To cancel the commit we will create a new commit, cancelling the unwanted changes.
-
-**02 Edit the file and make a commit**
-
-PS D:\GITRepos> nano hello.html
-
-```
-<html>
-  <head>
-  </head>
-  <body>
-	<h1>Hello, World!</h1>
-	<!-- This is an unwanted but committed change -->
-  </body>
-</html>
-
-```
-
-PS D:\GITRepos> git add hello.html
-
-PS D:\GITRepos> git commit -m "Oops, we didn't want this commit"
-
-**03 Make a commit with new changes that discard previous changes**
-
-PS D:\GITRepos> git revert HEAD
-
-**04 Check the log**
-
-PS D:\GITRepos> git hist
-
-**05 Mark this branch first**
-
-PS D:\GITRepos> git tag oops
-
-**06 Reset commit to previous Oops**
-
-PS D:\GITRepos> git reset --hard v1
-
-PS D:\GITRepos> git hist
-
-**07 Nothing is ever lost**
-
-PS D:\GITRepos> git hist --all
-
-### 17. Removing the oops tag —
-
-**01 Removal of the oops tag**
-
-PS D:\GITRepos> git tag -d oops
-
-PS D:\GITRepos> git hist --all
-
-### 18. Changing commits —
-
-**01 Change the page and commit**
-
-PS D:\GITRepos> nano hello.html
-
-PS D:\GITRepos> git add hello.html
-
-PS D:\GITRepos> git commit -m "Add an author comment"
-
-**02 Oops... email required**
-
-PS D:\GITRepos> nano hello.html
-
-```
-<!-- Author: Anup Kumar Mondal (anuniqs@gmail.com) -->
-<html>
-  <head>
-  </head>
-  <body>
-	<h1>Hello, World!</h1>
-  </body>
-</html>
-
-```
-
-**03 Change the previous commit**
-
-PS D:\GITRepos> git add hello.html
-
-PS D:\GITRepos> git commit --amend -m "Add an author/email comment"
-
-**04 View history**
-
-PS D:\GITRepos> git hist
-
-### 19. Moving files —
-
-**01 Move the hello.html file to the lib directory**
-
-PS D:\GITRepos> mkdir lib
-
-PS D:\GITRepos> git mv hello.html lib
-
-PS D:\GITRepos> git status
-
-**02 Commit new directory**
-
-PS D:\GITRepos> git commit -m "Moved hello.html to lib"
-
-### 20. More information about the structure —
-
-**01 Adding index.html**
-
-PS D:\GITRepos> nano index.html
-
-PS D:\GITRepos> git add index.html
-
-PS D:\GITRepos> git commit -m "Added index.html."
-
-### 21. Inside Git: .Git directory —
-
-**01 The .git directory**
-
-PS D:\GITRepos> ls -C .git
-
-**02 Object Database**
-
-PS D:\GITRepos> ls -C .git/objects
-
-**03 Inquire the database objects**
-
-PS D:\GITRepos> ls -C .git/objects/0a
-
-**04 Config File**
-
-PS D:\GITRepos> cat .git/config
-
-**05 Branches and tags**
-
-PS D:\GITRepos> ls .git/refs
-
-PS D:\GITRepos> ls .git/refs/heads
-
-PS D:\GITRepos> ls .git/refs/tags
-
-PS D:\GITRepos> cat .git/refs/tags/v1
-
-**06 HEAD File**
-
-PS D:\GITRepos> cat .git/HEAD
-
-### 22. Git inside: Direct work with git objects —
-
-**01 Searching for the last commit**
-
-PS D:\GITRepos> git hist --max-count=1
-
-**02 Display of the last commit**
-
-PS D:\GITRepos> git cat-file -t 90ead67
-
-PS D:\GITRepos> git cat-file -p 90ead67
-
-**03 Tree search**
-
-### 23. Creating a Branch —
-
-**01 Create a branch**
-
-PS D:\GITRepos> git checkout -b style
-
-PS D:\GITRepos> git status
-
-**02 Add style.css file**
-
-PS D:\GITRepos> touch lib/style.css
-
-PS D:\GITRepos> nano lib/style.css
-
-```
-h1 {
-  color: red;
-}
-
-```
-
-PS D:\GITRepos> git add lib/style.css
-
-PS D:\GITRepos> git commit -m "Added css stylesheet"
-
-**03 Change the main page**
-
-PS D:\GITRepos> nano lib/hello.html
-
-```
-<!-- Author: Anup Kumar Mondal (anuniqs@gmail.com) -->
-<html>
-  <head>
-	<link type="text/css" rel="stylesheet" media="all" href="style.css" />
-  </head>
-  <body>
-	<h1>Hello, World!</h1>
-  </body>
-</html>
-
-```
-
-PS D:\GITRepos> git add lib/hello.html
-
-PS D:\GITRepos> git commit -m "Hello uses style.css"
-
-**04 Change index.html**
-
-PS D:\GITRepos> nano index.html
-
-```
-<html>
-  <head>
-	<link type="text/css" rel="stylesheet" media="all" href="lib/style.css" />
-  </head>
-  <body>
-	<iframe src="lib/hello.html" width="200" height="200" />
-  </body>
-</html>
-
-```
-
-PS D:\GITRepos> git add index.html
-
-PS D:\GITRepos> git commit -m "Updated index.html"
-
-PS D:\GITRepos> git hist --all
-
-### 24. Navigating Branches —
-
-**01 Switching to the Master branch**
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> git branch
-
-PS D:\GITRepos> cat lib/hello.html
-
-**02 Let us return to the style branch**
-
-PS D:\GITRepos> git checkout style
-
-PS D:\GITRepos> git branch
-
-PS D:\GITRepos> cat lib/hello.html
-
-**01 Update the README file with the changes**
-
-PS D:\GITRepos> nano README
-
-This is the Hello World example from the git tutorial.
-
-**02 Commit changes of README file in the master branch.**
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> git add README
-
-PS D:\GITRepos> git commit -m "Added README"
-
-### 25. View the different branches —
-
-**01 View current branches**
-
-PS D:\GITRepos> git hist --all
-
-### 26. Merging —
-
-**01 Merging to a single branch**
-
-PS D:\GITRepos> git checkout style
-
-PS D:\GITRepos> git branch
-
-PS D:\GITRepos> git merge master
-
-PS D:\GITRepos> git hist --all
-
-### 27. Creating a conflict —
-
-**01 Return to the master and create conflict**
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> nano lib/hello.html
-
-```
-<!-- Author: Anup Kumar Mondal (anuniqs@gmail.com) -->
-<html>
-  <head>
-	<!-- no style -->
-  </head>
-  <body>
-	<h1>Hello, World! Life is great!</h1>
-  </body>
-</html>
-
-```
-
-PS D:\GITRepos> git add lib/hello.html
-
-PS D:\GITRepos> git commit -m 'Life is great!'
-
-**02 View branches**
-
-PS D:\GITRepos> git hist --all
-
-### 28. Resolving Conflicts —
-
-**01 Merge the master branch with style**
-
-PS D:\GITRepos> git checkout style
-
-PS D:\GITRepos> git merge master
-
-PS D:\GITRepos> cat lib/hello.html
-
-**02 Resolution of the conflict**
-
-PS D:\GITRepos> nano lib/hello.html
-
-```
-<!-- Author: Anup Kumar Mondal (anuniqs@gmail.com) -->
-<html>
-  <head>
-	<!-- no style -->
-  </head>
-  <body>
-	<h1>Hello, World! Life is great!</h1>
-  </body>
-</html>
-
-```
-
-**To,**
-
-```
-<!-- Author: Anup Kumar Mondal (anuniqs@gmail.com) -->
-<html>
-  <head>
-	<link type="text/css" rel="stylesheet" media="all" href="style.css" />
-  </head>
-  <body>
-	<h1>Hello, World! Life is great!</h1>
-  </body>
-</html>
-
-```
-
-**03 Make a commit of conflict resolution**
-
-PS D:\GITRepos> git add lib/hello.html
-
-PS D:\GITRepos> git commit -m "Merged master fixed conflict."
-
-### 29. Resetting the style branch —
-
-**01 Resetting the style branch**
-
-PS D:\GITRepos> git checkout style
-
-PS D:\GITRepos> git hist
-
-PS D:\GITRepos> git reset --hard 90ead67
-
-**02 Check the branch**
-
-PS D:\GITRepos> git hist --all
-
-### 30. Reset of the Master branch —
-
-**01 Resetting the master branch**
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> git hist
-
-PS D:\GITRepos> git reset --hard 6d14fb1
-
-PS D:\GITRepos> git hist --all
-
-### 31. Rebase —
-
-PS D:\GITRepos> git checkout style
-
-PS D:\GITRepos> git rebase master
-
-PS D:\GITRepos> git hist
-
-### 32. Merging to the Master branch —
-
-**01 Merging style into master**
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> git merge style
-
-**02 Check the logs**
-
-PS D:\GITRepos> git hist
-
-### 33. Multiple repositories —
-
-So far we have been working with only one git repository. However, git is great for working with several repositories. These additional repositories can be stored locally, or accessed via network connection.
-
-### 34. Cloning repositories —
-
-**02 Create a clone of the hello repository**
-
-PS D:\GITRepos> cd
-
-PS D:\GITRepos> git clone hello cloned_hello
-
-PS D:\GITRepos> ls -ltr
-
-### 35. Examine the cloned repository —
-
-**01 Viewing the cloned repository**
-
-PS D:\GITRepos> cd cloned_hello/
-
-anup@megatron:~/cloned_hello$ ls -ltr
-
-**02 View the history of the cloned repository**
-
-anup@megatron:~/cloned_hello$ git hist --all
-
-### 36. What is origin? —
-
-anup@megatron:~/cloned_hello$ git remote
-
-anup@megatron:~/cloned_hello$ git remote -v
-
-anup@megatron:~/cloned_hello$ git remote show origin
-
-### 37. Remote branches —
-
-**01 List of the remote branches**
-
-anup@megatron:~/cloned_hello$ git branch
-
-anup@megatron:~/cloned_hello$ git branch -a
-
-### 38. Changing the original repository —
-
-**01 Make a change in the original hello repository**
-
-anup@megatron:~/cloned_hello$ cd ../hello/
-
-PS D:\GITRepos> nano README
-
-```
-This is the Hello World example from the git tutorial.
-(changed in original)
-
-```
-
-PS D:\GITRepos> git add README
-
-PS D:\GITRepos> git commit -m "Changed README in original repo"
-
-### 39. Fetching changes —
-
-PS D:\GITRepos> cd ../cloned_hello
-
-anup@megatron:~/cloned_hello$ git fetch
-
-anup@megatron:~/cloned_hello$ git hist --all
-
-anup@megatron:~/cloned_hello$ cat README
-
-### 40. Merging pulled changes —
-
-**01 Merge the pulled changes into the local master branch**
-
-anup@megatron:~/cloned_hello$ git merge origin/master
-
-anup@megatron:~/cloned_hello$ cat README
-
-### 41. Pulling and merging changes —
-
-git pull command is identical to git fetch plus git merge
-
-### 42. Adding a tracking branch —
-
-**01 Add a local branch tracking the remote branch.**
-
-anup@megatron:~/cloned_hello$ git branch --track style origin/style
-
-anup@megatron:~/cloned_hello$ git branch -a
-
-anup@megatron:~/cloned_hello$ git hist --max-count=2
-
-### 43. Bare repos —
-
-**01 Creating a bare repository**
-
-anup@megatron:~/cloned_hello$ cd ..
-
-PS D:\GITRepos> ls -ltr
-
-PS D:\GITRepos> git clone --bare hello hello.git
-
-PS D:\GITRepos> ls -ltr
-
-PS D:\GITRepos> ls -ltr hello.git/
-
-### 44. Adding a remote repository —
-
-PS D:\GITRepos> cd hello
-
-PS D:\GITRepos> git remote add shared ../hello.git
-
-### 45. Submitting changes —
-
-PS D:\GITRepos> nano README
-
-```
-This is the Hello World example from the git tutorial.
-(Changed in the original and pushed to shared)
-
-```
-
-PS D:\GITRepos> git checkout master
-
-PS D:\GITRepos> git add README
-
-PS D:\GITRepos> git commit -m "Added shared comment to readme"
-
-PS D:\GITRepos> git push shared master
-
-### 46. Removing common changes —
-
-PS D:\GITRepos> cd ../cloned_hello
-
-anup@megatron:~/cloned_hello$ git remote add shared ../hello.git
-
-anup@megatron:~/cloned_hello$ git branch --track shared master
-
-anup@megatron:~/cloned_hello$ git pull shared master
-
-anup@megatron:~/cloned_hello$ cat README
-
-### 47. Placing your git repository —
-
-**01 Run git server**
-
+### 1. Getting Started
+
+-   **Installation:**
+    -   Download and install Git for your operating system:  [https://git-scm.com/downloads](https://git-scm.com/downloads)
+-   **User Configuration:**
+    -   Set your global username and email:
+        -   `git config --global user.name "[Your Name]"`
+        -   `git config --global user.email "[Your Email]"`
+    -   (Optional) Enable colorized output:
+        -   `git config --global color.ui auto`
+-   **Initializing a Repository:**
+    -   Create a new local repository in the current directory:
+        -   `git init [project_name]`  (optional)
+
+### 2. Tracking Changes
+
+-   **Staging Files:**
+    -   Add a file to the staging area for the next commit:
+        -   `git add [file_name]`
+    -   Add all tracked files in the current directory:
+        -   `git add .`
+    -   Add specific files (excluding patterns):
+        -   `git add -- :!*.txt`  (adds all except TXT files)
+    -   Unstage a file from the staging area:
+        -   `git reset HEAD [file_name]`
+-   **Viewing File Differences:**
+    -   Show modified files in the working directory:
+        -   `git status`
+    -   Show difference between working directory and staging area:
+        -   `git diff`
+    -   Show difference between staging area and last commit:
+        -   `git diff --staged`
+-   **Committing Changes:**
+    -   Create a new commit with a descriptive message:
+        -   `git commit -m "[Commit Message]"`
+
+### 3. Branching and Merging
+
+-   **Listing Branches:**
+    -   Show all local branches:
+        -   `git branch`
+    -   Show all branches (local and remote):
+        -   `git branch -a`
+-   **Creating Branches:**
+    -   Create a new branch:
+        -   `git branch [branch_name]`
+    -   Switch to an existing branch:
+        -   `git checkout [branch_name]`
+-   **Merging Branches:**
+    -   Merge another branch into the current branch:
+        -   `git merge [branch_name]`
+    -   Check for potential merge conflicts before merging:
+        -   `git difftool --dirstats --stat index [branch_name]`
+
+### 4. Remote Repositories
+
+-   **Cloning a Repository:**
+    -   Download a remote repository to your local machine:
+        -   `git clone https://docs.github.com/articles/cloning-a-repository`
+-   **Adding a Remote Repository:**
+    -   Connect your local repository to a remote repository:
+        -   `git remote add origin https://docs.github.com/articles/cloning-a-repository`
+-   **Pushing Changes to Remote:**
+    -   Push your local commits to the remote branch:
+        -   `git push origin [branch_name]`
+-   **Pulling Changes from Remote:**
+    -   Fetch all changes from the remote repository:
+        -   `git fetch origin`
+    -   Merge fetched changes into the current branch:
+        -   `git merge origin/[branch_name]`
+
+### 5. Undoing Changes
+
+-   **Unstaging Files:**
+    -   Revert changes and remove them from the staging area:
+        -   `git reset HEAD [file_name]`
+-   **Undoing Commits:**
+    -   Unstage all changes and reset to the HEAD commit:
+        -   `git reset HEAD --hard`
+    -   Discard the last commit without affecting the working directory:
+        -   `git commit --amend`
+
+### 6. Advanced Git Commands
+
+-   **Ignoring Files:**
+    -   Prevent specific files from being tracked:
+        -   Add patterns to a  `.gitignore`  file in the repository root directory.
+-   **Stashing Changes:**
+    -   Temporarily save uncommitted changes for later use:
+        -   `git stash`
+    -   Apply stashed changes back to the working directory:
+        -   `git stash pop`
+-   **Tagging Releases:**
+    -   Create a tag for a specific commit:
+        -   `git tag [tag_name] [commit_hash]`
+    -   List all tags:
+        -   `git tag`
