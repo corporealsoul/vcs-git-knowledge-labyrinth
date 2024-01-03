@@ -51,7 +51,10 @@
         -   `git merge [branch_name]`
     -   Check for potential merge conflicts before merging:
         -   `git difftool --dirstats --stat index [branch_name]`
-
+-   **Reapply Commits:**
+    -   Reapply commits on top of another base tip:
+        -   `git rebase`
+ 
 ### 4. Remote Repositories
 
 -   **Cloning a Repository:**
@@ -95,3 +98,23 @@
         -   `git tag [tag_name] [commit_hash]`
     -   List all tags:
         -   `git tag`
+
+### 7. Git Snapshots
+
+-   **Snapshots:**
+    -   Show commit logs:
+        -   `git log`
+    -   Create, list, delete or verify a tag object signed with GPG:
+        -   `git tag`
+    -   Stash the changes in a dirty working directory away:
+        -   `git stash`
+
+### 8. Managing History in Git
+
+-   **Manage History:**
+    -   Reset current HEAD to the specified state:
+        -   `git reset`
+    -   Revert some existing commits:
+        -   `git revert`
+    -   Use binary search to find the commit that introduced a bug:
+        -   `git bisect`
