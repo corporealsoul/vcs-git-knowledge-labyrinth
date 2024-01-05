@@ -15,6 +15,8 @@
 
 ### 2. Tracking Changes
 
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git status`
+
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git add [file_name]`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git add .`
