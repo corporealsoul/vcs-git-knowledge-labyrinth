@@ -1,0 +1,7 @@
+Git-Add
+
+
+Git-Diff
+
+
+git diff --staged
