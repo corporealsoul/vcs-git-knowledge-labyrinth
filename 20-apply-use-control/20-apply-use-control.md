@@ -38,7 +38,7 @@
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch`
 
-`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch -a`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch --all`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch -d`
 
