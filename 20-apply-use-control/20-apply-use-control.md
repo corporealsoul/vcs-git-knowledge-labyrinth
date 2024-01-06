@@ -38,6 +38,8 @@
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch`
 
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch -vv`
+
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch -a`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git branch -d`
@@ -122,6 +124,8 @@
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git show`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git tag`
+
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git blame`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git stash`
 
