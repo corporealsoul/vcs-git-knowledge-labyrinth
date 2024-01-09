@@ -65,6 +65,8 @@
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git push origin [branch_name]`
 
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git push origin main`
+
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git fetch origin`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git pull`
