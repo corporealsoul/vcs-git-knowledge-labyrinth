@@ -52,7 +52,7 @@
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git difftool --dirstats --stat index [branch_name]`
 
-`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git rebase`
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git rebase main`
  
 
 ### 4. Remote Repositories
@@ -72,7 +72,12 @@
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git merge origin/[branch_name]`
 
 
-### 5.1 Undoing Changes Before Commit
+### 5.1 Undoing Changes on Working Area Before Stagging Area
+
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git reset HEAD --hard`
+
+
+### 5.2 Undoing Changes Before Commit, Rollback from Stagging Area to Working Area
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git reset`
 
@@ -84,14 +89,20 @@
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git checkout -- .`
 
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git restore --staged <file>`
 
-### 5.1 Undoing Changes Before Commit
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git restore --staged .`
+
+
+### 5.3 Undoing Changes After Commit
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git log`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git reset --soft <commit>`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git reset --hard <commit>`
+
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git reset --hard HEAD~3`
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git log`
 
