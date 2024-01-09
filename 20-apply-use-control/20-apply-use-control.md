@@ -78,6 +78,8 @@
 
 `PS D:\GITRepos\vcs-git-knowledge-labyrinth> git reset HEAD --hard`
 
+`PS D:\GITRepos\vcs-git-knowledge-labyrinth> git restore <file>`
+
 
 ### 5.2 Undoing Changes Before Commit, Rollback from Stagging Area to Working Area
 
